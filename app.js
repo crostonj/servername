@@ -1,13 +1,24 @@
 var express = require('express');
 var app = express();
 var os = require("os");
+var hostinfo = require('./js/script.js')();
+
+var port = 8000;
+
+app.use(express.static('public'));
+app.set('views', './views');
+app.set('view engine', 'ejs');
 
 
-var port = 80;
 
 app.get('/', function (req, res) {
 
-    res.send("Hello World");
+
+
+    console.log(hostinfo);
+        res.render('index', {
+            host: hostinfo
+        });
 });
 
 app.get('/ip', function (req, res) {
