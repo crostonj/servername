@@ -2,9 +2,10 @@ var express = require('express');
 var app = express();
 var os = require("os");
 var hostinfo = require('./js/script.js')();
+const path = require('path');
 
-var port = 8000;
-
+var port = 2000;
+app.use(express.static(path.join(__dirname, 'bower_components')));
 app.use(express.static('public'));
 app.set('views', './views');
 app.set('view engine', 'ejs');
@@ -12,10 +13,6 @@ app.set('view engine', 'ejs');
 
 
 app.get('/', function (req, res) {
-
-
-
-    console.log(hostinfo);
         res.render('index', {
             host: hostinfo
         });

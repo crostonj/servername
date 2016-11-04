@@ -1,0 +1,17 @@
+{
+  "name": "svrname",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Jeff Croston"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/crostonj/servername",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
