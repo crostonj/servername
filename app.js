@@ -17,6 +17,11 @@ app.get('/', function (req, res) {
             host: hostinfo
         });
 });
+app.get('/servername', function (req, res) {
+        res.render('index', {
+            host: hostinfo
+        });
+});
 
 app.get('/ip', function (req, res) {
 
