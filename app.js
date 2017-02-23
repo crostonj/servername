@@ -1,22 +1,23 @@
 var express = require('express');
 var app = express();
 var os = require("os");
-var hostinfo = require('./js/script.js')();
 const path = require('path');
 
 var port = 2000;
 app.use(express.static(path.join(__dirname, 'bower_components')));
 app.use(express.static('public'));
+
+var hostinfo = require('./public/js/script.js')();
 app.set('views', './views');
 app.set('view engine', 'ejs');
 
-
-
+//root request
 app.get('/', function (req, res) {
         res.render('index', {
             host: hostinfo
         });
 });
+
 app.get('/servername', function (req, res) {
         res.render('index', {
             host: hostinfo
