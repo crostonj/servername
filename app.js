@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 
-var port = 2000;
+var port = 80;
 app.use(express.static('public'));
 
 app.set('views', './views');
